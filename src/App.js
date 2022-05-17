@@ -30,6 +30,8 @@ function App() {
         <div className="mb.5">
           <button
             onClick={() => {
+              if(patName === "")
+                return;
               setPat((oldArray) => [...oldArray, patName]);
               setPatName("");
             }}
