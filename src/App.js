@@ -4,6 +4,9 @@ import { SelectInput, TextInput } from "./pages/Inputs";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./common/Nav";
 import { FaPlus } from "react-icons/fa";
+import { FcAddDatabase, FcDeleteDatabase } from "react-icons/fc";
+
+
 import { useState } from "react";
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
           id="pname"
         />
         <div className="mb.5">
-          <button
+        <button
             onClick={() => {
               if(patName === "")
                 return;
@@ -37,10 +40,20 @@ function App() {
             }}
             className="btn btn-primary btn-lg px-4"
           >
-            <FaPlus /> Create New
+            <FcAddDatabase /> Create New
+          </button>&nbsp;
+          <button
+            onClick={() => {
+              if(patName === "")
+                return;
+              setPat(pat.filter(item => item !== patName));
+              setPatName("");
+            }}
+            className="btn btn-primary btn-lg px-4"
+          >
+            <FcDeleteDatabase /> Delete
           </button>
         </div>
-        {patName}
         <ul>
           {pat.map((p) => (
             <li key={p}>{p}</li>
