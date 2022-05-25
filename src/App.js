@@ -56,7 +56,7 @@ function App() {
         </div>
         <ul>
           {pat.map((p) => (
-            <li key={p}>{p}</li>
+            <li>{p}</li>
           ))}
         </ul>
       </header>
